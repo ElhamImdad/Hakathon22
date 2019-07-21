@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Hakathon22</string>
+    <string-array name="gender">
+        <item>ذكر </item>
+        <item>أنثى </item>
+    </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
