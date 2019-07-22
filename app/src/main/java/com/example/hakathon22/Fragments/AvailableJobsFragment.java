@@ -21,7 +21,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.example.hakathon22.Helpers.SharedPrefManager;
 import com.example.hakathon22.Helpers.VolleySingleton;
 import com.example.hakathon22.R;
-import com.example.hakathon22.adapters.AvailableJobsAdapter;
+import com.example.hakathon22.Adapters.AvailableJobsAdapter;
 import com.example.hakathon22.Models.Jobs;
 
 import org.json.JSONArray;
@@ -30,7 +30,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**

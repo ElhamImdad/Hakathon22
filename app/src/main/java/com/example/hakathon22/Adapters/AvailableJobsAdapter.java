@@ -1,4 +1,4 @@
-package com.example.hakathon22.adapters;
+package com.example.hakathon22.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +16,6 @@ import com.example.hakathon22.R;
 import com.example.hakathon22.Models.Jobs;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class AvailableJobsAdapter extends RecyclerView.Adapter<AvailableJobsAdapter.ViewHolder>{
 
