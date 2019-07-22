@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Hakathon22</string>
+    <string name="app_name">وظائف ذوي الهمم</string>
     <string-array name="gender">
         <item>ذكر </item>
         <item>أنثى </item>

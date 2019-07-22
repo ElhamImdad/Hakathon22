@@ -24,6 +24,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.hakathon22.Helpers.SharedPrefManager;
 import com.example.hakathon22.Helpers.VolleySingleton;
+import com.example.hakathon22.Models.ProvidingJob;
 import com.example.hakathon22.Models.SearchingJob;
 import com.example.hakathon22.R;
 
@@ -33,29 +34,25 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RegistrationUserR extends Fragment {
+public class RegistrationProviderFragment extends Fragment {
     private Spinner spinnerGender;
-    private EditText name, age, email, password, gender, type;
+    private EditText name, email, password ;
     private String token;
     private Button confirm;
-    public RegistrationUserR() {
+    public RegistrationProviderFragment() {
         // Required empty public constructor
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_registration_user_r, container, false);
-        spinnerGender = view.findViewById(R.id.spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.gender, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerGender.setAdapter(adapter);
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_registration, container, false);
 
         name = view.findViewById(R.id.requesterName);
-        age = view.findViewById(R.id.age);
         email = view.findViewById(R.id.textInputEmail);
         password = view.findViewById(R.id.textInputPassword);
-        type = view.findViewById(R.id.type);
 
         confirm = view.findViewById(R.id.confirm);
 
@@ -65,19 +62,17 @@ public class RegistrationUserR extends Fragment {
                 registerRequester();
             }
         });
+
         return view;
     }
     private void registerRequester() {
-        final String Age = age.getText().toString().trim();
         final String Email = email.getText().toString().trim();
         final String Password = password.getText().toString().trim();
         final String Name = name.getText().toString().trim();
-        final String Type = type.getText().toString().trim();
-        final String gender = spinnerGender.getSelectedItem().toString().trim();
-        final String isCompany = "0";
+        final String isCompany = "1";
 
         String url = "https://linguistixtank.website/job/public/api/auth/signup";
-        if (Age.isEmpty() || Email.isEmpty() || Password.isEmpty() || Name.isEmpty() || Type.isEmpty()) {
+        if ( Email.isEmpty() || Password.isEmpty() || Name.isEmpty() ) {
             Toast.makeText(getContext(), "الرجاء إدخال جميع البيانات", Toast.LENGTH_LONG).show();
         } else {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
@@ -89,7 +84,7 @@ public class RegistrationUserR extends Fragment {
 
                                 JSONObject ob = new JSONObject(response);
                                 token = ob.getString("access_token");
-                                SearchingJob user = new SearchingJob(token);
+                                ProvidingJob user = new ProvidingJob(token);
                                 SharedPrefManager.getInstance(getContext()).userLogin(user);
 
                                 Toast.makeText(getContext(), "تم تسجيلك بنجاح", Toast.LENGTH_LONG).show();
@@ -118,12 +113,12 @@ public class RegistrationUserR extends Fragment {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String, String> params = new HashMap<>();
-                    params.put("age", Age);
+                    params.put("age", "0");
                     params.put("email", Email);
                     //  params.put("password", Password);
                     params.put("name", Name);
-                    params.put("type", Type);
-                    params.put("gender", gender);
+                    params.put("type", "NULL");
+                    params.put("gender", "NULL");
                     params.put("isCompany", isCompany);
 
                     return params;
