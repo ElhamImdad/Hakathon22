@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Jobs {
+    private String  type;
 
     @SerializedName("id")
     @Expose
@@ -78,5 +79,11 @@ public class Jobs {
         this.companyName = companyName;
     }
 
+    public String getType() {
+        return type;
+    }
 
+    public void setType(String type) {
+        this.type = type;
+    }
 }

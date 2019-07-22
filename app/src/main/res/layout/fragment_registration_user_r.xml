@@ -21,7 +21,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/rectangle"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,9 +33,9 @@
             android:id="@+id/textNewAcc"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:background="@color/white"
             android:gravity="center"
             android:text="تسجيل جديد"
-            android:background="@color/white"
             android:textColor="@color/red"
             android:textSize="13sp" />
 
@@ -43,9 +43,9 @@
             android:id="@+id/textLogIn"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:background="@color/white"
             android:gravity="center"
             android:text="تسجيل دخول"
-            android:background="@color/white"
             android:textColor="@color/red"
             android:textSize="13sp" />
     </LinearLayout>

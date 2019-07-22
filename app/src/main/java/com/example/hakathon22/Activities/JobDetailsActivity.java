@@ -42,65 +42,12 @@ public class JobDetailsActivity extends AppCompatActivity {
         bundle =  getIntent().getExtras();
         Integer option = bundle.getInt("option");
 
-        response(option);
-    }
+        job_details__title.setText(bundle.getString("title"));
+        job_details__company_name.setText(bundle.getString("company_name"));
+        job_details__desc.setText(bundle.getString("desc"));
+        job_details__type.setText(bundle.getString("type"));
+        job_details__startdate.setText(bundle.getString("start_date"));
+        job_details__enddate.setText(bundle.getString("end_date"));
 
-
-    public void response(final Integer id) {
-
-
-        Call<List<JobsDetails>> call = RestJobs.getInstance().getApi().getJobsDetails();
-
-
-
-        call.enqueue(new Callback<List<JobsDetails>>() {
-
-
-            @Override
-            public void onResponse(Call<List<JobsDetails>> call, Response<List<JobsDetails>> response) {
-
-
-                if (response.isSuccessful()) {
-
-                    Log.e("JobsDetails", "Response code: " + response.body());
-
-                    JobsDetails ite;
-
-                    jobsDetails = response.body();
-                    for(int i = 0 ; i <jobsDetails.size();i++){
-                        Log.e("JobsDetails", "Response code: " +jobsDetails.get(i).getId()+"???" );
-
-                        if(id==(jobsDetails.get(i).getId() )){
-
-                            //Log.e("JobsDetails Activity", "Response: " +jobsDetails.get(i).getLink() );
-
-                            ite = new JobsDetails();
-                            ite.setTitle(jobsDetails.get(i).getTitle());
-                            ite.setDesc(jobsDetails.get(i).getDesc());
-                            ite.setStartDate(jobsDetails.get(i).getStartDate());
-                            ite.setEndDate(jobsDetails.get(i).getEndDate());
-                            ite.setCompanyName(jobsDetails.get(i).getCompanyName());
-                            ite.setUserId(jobsDetails.get(i).getUserId());
-
-                            job_details__title.setText(jobsDetails.get(i).getTitle());
-                            job_details__company_name.setText(jobsDetails.get(i).getCompanyName());
-                            job_details__desc.setText(jobsDetails.get(i).getDesc());
-                            job_details__startdate.setText(jobsDetails.get(i).getStartDate());
-                            job_details__enddate.setText(jobsDetails.get(i).getEndDate());
-
-
-
-                        }
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<JobsDetails>> call, Throwable t) {
-
-                Toast.makeText(getApplicationContext(), " Error connecting to the server.. Trying Again...", Toast.LENGTH_SHORT).show();
-
-            }
-        });
     }
 }

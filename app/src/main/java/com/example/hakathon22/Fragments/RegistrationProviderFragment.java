@@ -23,6 +23,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.example.hakathon22.Activities.JobProviderMainActivity;
 import com.example.hakathon22.Activities.MainActivity;
 import com.example.hakathon22.Helpers.SharedPrefManager;
 import com.example.hakathon22.Helpers.VolleySingleton;
@@ -91,7 +92,7 @@ public class RegistrationProviderFragment extends Fragment {
 
                                 Toast.makeText(getContext(), "تم تسجيلك بنجاح", Toast.LENGTH_LONG).show();
 
-                                Intent intent = new Intent(getContext(), MainActivity.class);
+                                Intent intent = new Intent(getContext(), JobProviderMainActivity.class);
                                 startActivity(intent);
 
 

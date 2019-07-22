@@ -58,6 +58,12 @@ public class AvailableJobsAdapter extends RecyclerView.Adapter<AvailableJobsAdap
 
                 Intent intent = new Intent(context, JobDetailsActivity.class);
                 intent.putExtra("option", jobsList.get(position).getId());
+                intent.putExtra("company_name", jobsList.get(position).getCompanyName());
+                intent.putExtra("desc", jobsList.get(position).getDesc());
+                intent.putExtra("start_date", jobsList.get(position).getStartDate());
+                intent.putExtra("end_date", jobsList.get(position).getEndDate());
+                intent.putExtra("type", jobsList.get(position).getType());
+                intent.putExtra("title", jobsList.get(position).getTitle());
 
                 Log.e("All Jobs adapter", "Response: " + jobsList.get(position).getId());
 

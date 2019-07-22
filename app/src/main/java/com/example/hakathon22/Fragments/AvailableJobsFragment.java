@@ -42,12 +42,9 @@ public class AvailableJobsFragment extends Fragment {
     private ArrayList<Jobs> jobsList;
     private AvailableJobsAdapter mAdapter;
 
-
-
     public AvailableJobsFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,58 +66,6 @@ public class AvailableJobsFragment extends Fragment {
         return view;
 
     }
-
-
-   /*     public void response() {
-
-            try {
-                Call<List<Jobs>> call = RestJobs.getInstance().getApi().getJobs();
-
-                // Set up progress before call
-                final ProgressDialog progressDoalog;
-                progressDoalog = new ProgressDialog(getContext());
-                progressDoalog.setMax(100);
-                progressDoalog.setMessage("Loading...");
-                // progressDoalog.setTitle("ProgressDialog bar example");
-                progressDoalog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-                // show it
-                progressDoalog.show();
-
-                call.enqueue(new Callback<List<Jobs>>() {
-
-
-                    @Override
-                    public void onResponse(Call<List<Jobs>> call, Response<List<Jobs>> response) {
-
-                         Log.e("Response 1", "Response code: " + response.code());
-
-                        if (response.isSuccessful()) {
-                            progressDoalog.dismiss();
-                            Log.e("Response 2", "Response code: " + response.code());
-
-                            jobs = response.body();
-
-                            showIt(jobs);
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<List<Jobs>> call, Throwable t) {
-                        progressDoalog.dismiss();
-
-                        Toast.makeText(getContext(), " Error connecting to the server.. Trying Again...", Toast.LENGTH_SHORT).show();
-
-                        response();
-
-                    }
-                });
-
-            } catch (Exception e) {
-                Log.e("Error", "" + e);
-
-            }
-        }*/
-
     private void registerRequester() {
 
         String url = "https://linguistixtank.website/job/public/api/job/index";
@@ -140,6 +85,10 @@ public class AvailableJobsFragment extends Fragment {
                                     jobsObj.setId(jpbss.getJSONObject(i).getInt("id"));
                                    jobsObj.setTitle(jpbss.getJSONObject(i).getString("title"));
                                     jobsObj.setCompanyName(jpbss.getJSONObject(i).getString("company_name"));
+                                    jobsObj.setDesc(jpbss.getJSONObject(i).getString("desc"));
+                                    jobsObj.setStartDate(jpbss.getJSONObject(i).getString("start_date"));
+                                    jobsObj.setEndDate(jpbss.getJSONObject(i).getString("end_date"));
+                                    jobsObj.setType(jpbss.getJSONObject(i).getJSONObject("user").getString("type"));
                                     jobsList.add(jobsObj);
 
                                 }
@@ -179,14 +128,6 @@ public class AvailableJobsFragment extends Fragment {
                     DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
             VolleySingleton.getInstance(getContext()).addToRequestQueue(stringRequest);
         }
-
-/*
-        private void showIt(List<Jobs> response) {
-
-
-            mAdapter = new AvailableJobsAdapter(response,getContext());
-            recyclerView.setAdapter(mAdapter);
-        }*/
 
     }
 
