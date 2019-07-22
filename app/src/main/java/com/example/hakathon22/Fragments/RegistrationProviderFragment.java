@@ -1,6 +1,7 @@
 package com.example.hakathon22.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -22,6 +23,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.example.hakathon22.Activities.MainActivity;
 import com.example.hakathon22.Helpers.SharedPrefManager;
 import com.example.hakathon22.Helpers.VolleySingleton;
 import com.example.hakathon22.Models.ProvidingJob;
@@ -89,11 +91,9 @@ public class RegistrationProviderFragment extends Fragment {
 
                                 Toast.makeText(getContext(), "تم تسجيلك بنجاح", Toast.LENGTH_LONG).show();
 
-                            /*    Fragment f = new RequestsFragment();
-                                FragmentManager fm = getFragmentManager();
-                                FragmentTransaction ft = fm.beginTransaction();
-                                ft.replace(R.id.container, f);
-                                ft.commit();*/
+                                Intent intent = new Intent(getContext(), MainActivity.class);
+                                startActivity(intent);
+
 
                             } catch (JSONException e) {
                                 e.printStackTrace();

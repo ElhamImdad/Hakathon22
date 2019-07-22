@@ -1,6 +1,7 @@
 package com.example.hakathon22.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -22,6 +23,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.example.hakathon22.Activities.MainActivity;
 import com.example.hakathon22.Helpers.SharedPrefManager;
 import com.example.hakathon22.Helpers.VolleySingleton;
 import com.example.hakathon22.Models.SearchingJob;
@@ -68,7 +70,7 @@ public class RegistrationUserR extends Fragment {
         return view;
     }
     private void registerRequester() {
-        final String Age = age.getText().toString().trim();
+        final int Age = Integer.parseInt(age.getText().toString().trim());
         final String Email = email.getText().toString().trim();
         final String Password = password.getText().toString().trim();
         final String Name = name.getText().toString().trim();
@@ -77,14 +79,14 @@ public class RegistrationUserR extends Fragment {
         final String isCompany = "0";
 
         String url = "https://linguistixtank.website/job/public/api/auth/signup";
-        if (Age.isEmpty() || Email.isEmpty() || Password.isEmpty() || Name.isEmpty() || Type.isEmpty()) {
+        if (Age==-1 || Email.isEmpty() || Password.isEmpty() || Name.isEmpty() || Type.isEmpty()) {
             Toast.makeText(getContext(), "الرجاء إدخال جميع البيانات", Toast.LENGTH_LONG).show();
         } else {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                     new Response.Listener<String>() {
-
                         @Override
                         public void onResponse(String response) {
+                            Log.e("response fron ===", response);
                             try {
 
                                 JSONObject ob = new JSONObject(response);
@@ -94,11 +96,8 @@ public class RegistrationUserR extends Fragment {
 
                                 Toast.makeText(getContext(), "تم تسجيلك بنجاح", Toast.LENGTH_LONG).show();
 
-                            /*    Fragment f = new RequestsFragment();
-                                FragmentManager fm = getFragmentManager();
-                                FragmentTransaction ft = fm.beginTransaction();
-                                ft.replace(R.id.container, f);
-                                ft.commit();*/
+                                Intent intent = new Intent(getContext(), MainActivity.class);
+                                startActivity(intent);
 
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -118,14 +117,14 @@ public class RegistrationUserR extends Fragment {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String, String> params = new HashMap<>();
-                    params.put("age", Age);
+                    params.put("age", String.valueOf(Age));
                     params.put("email", Email);
-                    //  params.put("password", Password);
+                    params.put("password", Password);
                     params.put("name", Name);
                     params.put("type", Type);
                     params.put("gender", gender);
-                    params.put("isCompany", isCompany);
-
+                    params.put("password_confirmation", Password);
+                    params.put("isCompany", String.valueOf(0));
                     return params;
                 }
             };
