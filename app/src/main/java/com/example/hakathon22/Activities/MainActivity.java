@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.hakathon22.Fragments.AppliedJobsFragment;
+import com.example.hakathon22.Fragments.AvailableJobsFragment;
 import com.example.hakathon22.Fragments.JobAvailableFragment;
 import com.example.hakathon22.Fragments.ProfileFragment;
 
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                     setFragment(new AppliedJobsFragment());
                     break;
                 case R.id.available_jobs:
-                    setFragment(new JobAvailableFragment());
+                    setFragment(new AvailableJobsFragment());
                     break;
                 case R.id.profile:
                     setFragment(new ProfileFragment());

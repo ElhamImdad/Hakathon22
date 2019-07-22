@@ -10,6 +10,7 @@
         android:roundIcon="@drawable/app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Activities.JobDetailsActivity"></activity>
         <activity android:name=".Activities.MainActivity"/>
         <activity android:name=".Activities.AuthenticationActivity">
 
