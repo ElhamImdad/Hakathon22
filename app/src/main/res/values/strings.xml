@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">وظائف ذوي الهمم</string>
+    <string name="app_name">همة</string>
     <string-array name="gender">
-        <item>ذكر </item>
-        <item>أنثى </item>
+        <item>ذكر</item>
+        <item>أنثى</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->

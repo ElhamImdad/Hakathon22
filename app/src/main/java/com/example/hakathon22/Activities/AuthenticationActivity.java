@@ -10,7 +10,7 @@ import android.os.Bundle;
 import com.example.hakathon22.Fragments.SelectTypeUserFragment;
 import com.example.hakathon22.R;
 
-public class AuthenticationActivity {
+public class AuthenticationActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,5 @@ public class AuthenticationActivity {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.container,fragment);
-        ft.commit();
-    }
+        ft.commit();}
 }
-

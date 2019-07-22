@@ -47,3 +47,4 @@ public class ProviderHomeFragment extends Fragment {
         return view;
     }
 }
+

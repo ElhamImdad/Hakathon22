@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import com.example.hakathon22.Fragments.AppliedJobsFragment;
 import com.example.hakathon22.Fragments.JobAvailableFragment;
 import com.example.hakathon22.Fragments.ProfileFragment;
+
 import com.example.hakathon22.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -50,6 +51,4 @@ public class MainActivity extends AppCompatActivity {
         ft.replace(R.id.frame,f);
         ft.commit();
     }
-
-
 }

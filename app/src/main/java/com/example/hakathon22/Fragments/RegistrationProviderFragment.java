@@ -131,5 +131,4 @@ public class RegistrationProviderFragment extends Fragment {
             VolleySingleton.getInstance(getContext()).addToRequestQueue(stringRequest);
         }
     }
-
 }
