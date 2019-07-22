@@ -1,4 +1,4 @@
-package com.example.hakathon22.models;
+package com.example.hakathon22.Models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

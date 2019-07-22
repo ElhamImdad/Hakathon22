@@ -9,7 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hakathon22.R;
-import com.example.hakathon22.models.JobsDetails;
+import com.example.hakathon22.Models.JobsDetails;
 import com.example.hakathon22.rest.RestJobs;
 
 import java.util.List;
@@ -68,7 +68,7 @@ public class JobDetailsActivity extends AppCompatActivity {
 
                     jobsDetails = response.body();
                     for(int i = 0 ; i <jobsDetails.size();i++){
-                        Log.e("JobsDetails", "Response code: " +jobsDetails.get(i).getId() );
+                        Log.e("JobsDetails", "Response code: " +jobsDetails.get(i).getId()+"???" );
 
                         if(id==(jobsDetails.get(i).getId() )){
 

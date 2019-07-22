@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,17 +13,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hakathon22.Activities.JobDetailsActivity;
 import com.example.hakathon22.R;
-import com.example.hakathon22.models.Jobs;
+import com.example.hakathon22.Models.Jobs;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AvailableJobsAdapter extends RecyclerView.Adapter<AvailableJobsAdapter.ViewHolder>{
 
-    private List<Jobs> jobsList;
+    private ArrayList<Jobs> jobsList;
     Context context;
     TextView title , company;
 
-    public AvailableJobsAdapter(List<Jobs> jobsList, Context context) {
+    public AvailableJobsAdapter(ArrayList<Jobs> jobsList, Context context) {
         this.jobsList = jobsList;
         this.context = context;
     }
@@ -45,15 +45,13 @@ public class AvailableJobsAdapter extends RecyclerView.Adapter<AvailableJobsAdap
 
         final Jobs jobs_position = jobsList.get(position);
 
-        title = (TextView) title.findViewById(R.id.title_id);
 
-        company = (TextView) company.findViewById(R.id.company_id);
 
         holder.title.setText(jobs_position.getTitle());
 
         holder.company.setText(jobs_position.getCompanyName());
 
-
+        Log.e("title in adapter", jobs_position.getTitle());
 
         holder.title.setOnClickListener(new View.OnClickListener() {
             @Override
