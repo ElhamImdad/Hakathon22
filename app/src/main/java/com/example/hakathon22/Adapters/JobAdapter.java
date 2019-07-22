@@ -50,20 +50,20 @@ public class JobAdapter extends BaseAdapter {
         JobOrder item = (JobOrder) getItem(i);
         viewHolder.jobName.setText(item.getJobName());
         viewHolder. companyName.setText(item.getCompanyName());
-        viewHolder. areaName.setText(item.getAreaName());
-        viewHolder. status.setText(item.getStatus());
+        viewHolder. des.setText(item.getDes());
+
         return view;
     }
     private class ViewHolder {
         TextView jobName;
         TextView companyName;
-        TextView areaName;
-        TextView status;
+        TextView des;
+
         public ViewHolder(View view) {
             jobName = view.findViewById(R.id.jobName);
             companyName = view.findViewById(R.id.companyName);
-            areaName = view.findViewById(R.id.areaName);
-            status = view.findViewById(R.id.status);
+            des = view.findViewById(R.id.areaName);
+
         }
     }
 }

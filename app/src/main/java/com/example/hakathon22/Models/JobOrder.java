@@ -4,13 +4,12 @@ public class JobOrder {
     private   String jobName;
     private  String companyName;
     private String status;
-    private String areaName;
+    private String des;
 
-    public JobOrder(String jobName, String companyName, String status, String areaName) {
+    public JobOrder(String jobName, String companyName,  String des) {
         this.jobName = jobName;
         this.companyName = companyName;
-        this.status = status;
-        this.areaName = areaName;
+        this.des = des;
     }
 
     public String getJobName() {
@@ -37,11 +36,11 @@ public class JobOrder {
         this.status = status;
     }
 
-    public String getAreaName() {
-        return areaName;
+    public String getDes() {
+        return des;
     }
 
-    public void setAreaName(String areaName) {
-        this.areaName = areaName;
+    public void setDes(String des) {
+        this.des = des;
     }
 }
