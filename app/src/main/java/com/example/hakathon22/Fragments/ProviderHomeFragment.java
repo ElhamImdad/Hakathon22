@@ -32,9 +32,9 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RequesterHomeFragment extends Fragment {
+public class ProviderHomeFragment extends Fragment {
 
-    public RequesterHomeFragment() {
+    public ProviderHomeFragment() {
         // Required empty public constructor
     }
 
@@ -42,7 +42,6 @@ public class RequesterHomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
         View view = inflater.inflate(R.layout.fragment_requester_home, container, false);
 
         return view;

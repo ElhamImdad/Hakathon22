@@ -15,9 +15,10 @@ public class RestJobs {
 
         private static RestJobs mInstance;
         private static Retrofit retrofit ;
-        public static final String BASE_URL = "https://linguistixtank.website/job/public/api";
+        public static final String BASE_URL = "https://linguistixtank.website/job/public/api/";
        // private static final String AUTH = "Basic " + Base64.encodeToString(("adsf1234@hotmail.com:asdf1234").getBytes(), Base64.NO_WRAP);
         private static final String AUT = "application/json";
+    private static final String AUTH = "application/json";
 
 
         private  RestJobs() {
@@ -32,7 +33,7 @@ public class RestJobs {
                                            .addHeader("Content-Type", AUT)
 
                                            // .addHeader("Authorization", AUTH)
-                                            .addHeader("Accept", AUT)
+                                            .addHeader("Accept", AUTH)
                                             .method(original.method(), original.body());
 
                                     Request request = requestBuilder.build();

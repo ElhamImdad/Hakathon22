@@ -21,14 +21,21 @@ import retrofit2.Response;
 public class JobDetailsActivity extends AppCompatActivity {
 
 
-    TextView textView;
+    TextView job_details__title , job_details__company_name , job_details__desc , job_details__type , job_details__startdate , job_details__enddate;
+
     List<JobsDetails> jobsDetails;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_detailes);
 
-        textView = (TextView)findViewById(R.id.job_details__id);
+        job_details__title = (TextView)findViewById(R.id.job_details__title);
+        job_details__company_name = (TextView)findViewById(R.id.job_details__company_name);
+        job_details__desc = (TextView)findViewById(R.id.job_details__desc);
+        job_details__type = (TextView)findViewById(R.id.job_details__type);
+        job_details__startdate = (TextView)findViewById(R.id.job_details__startdate);
+        job_details__enddate = (TextView)findViewById(R.id.job_details__enddate);
 
         Intent intent = getIntent();
         Bundle bundle;
@@ -51,15 +58,18 @@ public class JobDetailsActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call<List<JobsDetails>> call, Response<List<JobsDetails>> response) {
-                //  Log.e("Response 1", "Response code: " + response.code());
+
 
                 if (response.isSuccessful()) {
-                    // progressDoalog.dismiss();
-                    // Log.e("Response 2", "Response code: " + response.body().size());
+
+                    Log.e("JobsDetails", "Response code: " + response.body());
+
                     JobsDetails ite;
+
                     jobsDetails = response.body();
                     for(int i = 0 ; i <jobsDetails.size();i++){
-                        // Log.e("Response 2555", "Response code: " +item.get(i).getName() );
+                        Log.e("JobsDetails", "Response code: " +jobsDetails.get(i).getId() );
+
                         if(id==(jobsDetails.get(i).getId() )){
 
                             //Log.e("JobsDetails Activity", "Response: " +jobsDetails.get(i).getLink() );
@@ -72,7 +82,11 @@ public class JobDetailsActivity extends AppCompatActivity {
                             ite.setCompanyName(jobsDetails.get(i).getCompanyName());
                             ite.setUserId(jobsDetails.get(i).getUserId());
 
-                            textView.setText(jobsDetails.get(i).getTitle());
+                            job_details__title.setText(jobsDetails.get(i).getTitle());
+                            job_details__company_name.setText(jobsDetails.get(i).getCompanyName());
+                            job_details__desc.setText(jobsDetails.get(i).getDesc());
+                            job_details__startdate.setText(jobsDetails.get(i).getStartDate());
+                            job_details__enddate.setText(jobsDetails.get(i).getEndDate());
 
 
 

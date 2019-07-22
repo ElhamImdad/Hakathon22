@@ -36,11 +36,11 @@ public class SelectTypeUserFragment extends Fragment {
 
                 provideJobBTn.setBackgroundColor(getResources().getColor(R.color.white));
                 provideJobBTn.setTextColor(getResources().getColor(R.color.red));
-                        RequesterHomeFragment f = new RequesterHomeFragment();
-                        FragmentManager fm = getFragmentManager();
-                        FragmentTransaction ft = fm.beginTransaction();
-                        ft.replace(R.id.container,f);
-                        ft.commit();
+                RegistrationUserR f = new RegistrationUserR();
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.container,f);
+                ft.commit();
             }
         });
         provideJobBTn.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +51,7 @@ public class SelectTypeUserFragment extends Fragment {
 
                 searchJobBtn.setBackgroundColor(getResources().getColor(R.color.white));
                 searchJobBtn.setTextColor(getResources().getColor(R.color.red));
-                RequesterHomeFragment f = new RequesterHomeFragment();
+                RegistrationProviderFragment f = new RegistrationProviderFragment();
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container,f);

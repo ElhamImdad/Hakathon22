@@ -18,7 +18,7 @@
         android:layout_marginRight="12dp"
         android:background="@color/red"
         android:gravity="center"
-        android:text="الوظائف المعلنة"
+        android:text="الوظائف المتاحة"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:typeface="serif"

@@ -14,14 +14,6 @@ import retrofit2.http.POST;
 public interface APIService {
 
 
-   /* @FormUrlEncoded
-    @POST("/login")  //End Url
-    Call<LoginResponse> userLogin(
-            @Field("username") String username,
-            @Field("password") String password
-    );
-*/
-
 
     @GET("/job/index")
     Call<List<Jobs>> getJobs();
