@@ -36,7 +36,7 @@ public class SelectTypeUserFragment extends Fragment {
 
                 provideJobBTn.setBackgroundColor(getResources().getColor(R.color.white));
                 provideJobBTn.setTextColor(getResources().getColor(R.color.red));
-                        RequesterHomeFragment f = new RequesterHomeFragment();
+                        RegistrationUserR f = new RegistrationUserR();
                         FragmentManager fm = getFragmentManager();
                         FragmentTransaction ft = fm.beginTransaction();
                         ft.replace(R.id.container,f);
@@ -51,7 +51,7 @@ public class SelectTypeUserFragment extends Fragment {
 
                 searchJobBtn.setBackgroundColor(getResources().getColor(R.color.white));
                 searchJobBtn.setTextColor(getResources().getColor(R.color.red));
-                RequesterHomeFragment f = new RequesterHomeFragment();
+                RegistrationProviderFragment f = new RegistrationProviderFragment();
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container,f);

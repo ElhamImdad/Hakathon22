@@ -32,9 +32,9 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RequesterHomeFragment extends Fragment {
+public class ProviderHomeFragment extends Fragment {
 
-    public RequesterHomeFragment() {
+    public ProviderHomeFragment() {
         // Required empty public constructor
     }
 
@@ -46,6 +46,4 @@ public class RequesterHomeFragment extends Fragment {
 
         return view;
     }
-
-
 }
